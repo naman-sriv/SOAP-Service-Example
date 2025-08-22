@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://www.example.com/soap-book-service"
+            targetNamespace="http://www.example.com/soap-book-service">
+    <xsd:element name="getBookRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:int"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="getBookResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="book" type="tns:book"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="book">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="title" type="xsd:string"/>
+            <xsd:element name="author" type="xsd:string"/>
+            <xsd:element name="price" type="xsd:float"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
